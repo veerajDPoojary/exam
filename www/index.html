@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<title>&nbsp;</title>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="cordova/cordova.js"></script>
+</head>
+<body>
+	<div id="home" data-role="page">
+    	<div data-role="header">
+    	    <h1>Home</h1>
+   	    </div>
+    	<div data-role="content" style="padding:0px;">
+       	 <p>
+         	   <a href="#page-1">hey</a>
+      	  </p>
+    	</div>
+	</div>
+
+<!--page 1-->
+<div id="page-1" data-role="page">
+    <div data-role="header">
+        <a href="#" data-icon="arrow-l" data-iconpos="left" data-rel="back" data-transition="slide" data-direction="reverse">Back</a>
+        <h1>Choose Subject</h1>
+    </div>
+    <div data-role="content">
+        <ul data-role="listview">
+            <li><a href="#page-1">Software Engineering</a></li>
+            <li><a href="#page-2">System Software</a></li>
+            <li><a href="#page-3">Operating Systems</a></li>
+            <li><a href="#page-1">Database Management System</a></li>
+            <li><a href="#page-2">Computer Networks-1</a></li>
+            <li><a href="#page-3">FLAT</a></li>
+            <li><a href="#page-3">DBMS lab</a></li>
+            <li><a href="#page-3">SS & OS lab</a></li>
+            
+		</ul>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#page-1" data-role="tab" data-icon="grid" class="ui-btn-active">Subjects</a></li>
+                <li><a href="#page-2" data-role="tab" data-icon="grid">Time Table</a></li>
+                <li><a href="#page-3" data-role="tab" data-icon="grid">Page 3</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--/page 1-->
+
+<!--page 2-->
+<div id="page-2" data-role="page">
+    <div data-role="header">
+        <a href="#" data-icon="arrow-l" data-iconpos="left" data-rel="back" data-transition="slide" data-direction="reverse">Back</a>
+        <h1>Time Table</h1>
+    </div>
+    <div data-role="content">
+        <table data-role="table" id="my-table" data-mode="columntoggle">
+              <thead>
+                <tr>
+                  <th>Date<br/>&nbsp;</th>
+                  <th>&nbsp;</th>
+                  <th>Subject<br/>&nbsp;</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>10-12-2013<br/>Tuesday<br/>&nbsp;</td>
+                   <td>&nbsp;</td> 
+                  <td><a href="#" data-rel="external">Software Engineering</a></td>
+                </tr>
+                <tr>
+                  <td>13-12-2013<br/>Friday<br/>&nbsp;</td>
+                  <td>&nbsp;&nbsp;</td>
+                  <td><a href="#" data-rel="external">System Software</a></td>
+                </tr>
+                <tr>
+                  <td>17-12-2013<br/>Tuesday<br/>&nbsp;</td>
+                   <td>&nbsp;</td>
+                  <td><a href="#" data-rel="external">Operating Sysytem</a></td>
+                </tr>
+                <tr>
+                  <td>20-12-2013<br/>Friday<br/>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><a href="#" data-rel="external">DBMS</a></td>
+                </tr>
+                <tr>
+                  <td>24-12-2013<br/>Tuesday<br/>&nbsp;</td>
+                 <td>&nbsp;</td>
+                  <td><a href="#" data-rel="external">Computer Networks-1</a></td>
+                </tr><tr>
+                  <td>28-12-2013<br/>Saturday<br/>&nbsp;</td>
+                   <td>&nbsp;</td>
+                  <td><a href="#" data-rel="external">FLAT</a></td>
+                </tr>
+              </tbody>
+		</table>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#page-1" data-role="tab" data-icon="grid">Subjects</a></li>
+                <li><a href="#page-2" data-role="tab" data-icon="grid" class="ui-btn-active">Time Table</a></li>
+                <li><a href="#page-3" data-role="tab" data-icon="grid">Page 3</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--/page 2-->
+<!--page 3-->
+<div id="page-3" data-role="page">
+    <div data-role="header">
+        <a href="#" data-icon="arrow-l" data-iconpos="left" data-rel="back" data-transition="slide" data-direction="reverse">Back</a>
+        <h1>Page 3</h1>
+    </div>
+    <div data-role="content">
+        <p>Page 3 content</p>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#page-1" data-role="tab" data-icon="grid">Subjects</a></li>
+                <li><a href="#page-2" data-role="tab" data-icon="grid">Time Table</a></li>
+                <li><a href="#page-3" data-role="tab" data-icon="grid" class="ui-btn-active">Page 3</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--\page3-->
+	</body>
+<script>
+$("a[data-role=tab]").each(function () {
+    var anchor = $(this);
+    anchor.bind("click", function () {
+        $.mobile.changePage(anchor.attr("href"), {
+            transition: "none",
+            changeHash: false
+        });
+        return false;
+    });
+});
+
+$("div[data-role=page]").bind("pagebeforeshow", function (e, data) {
+    $.mobile.silentScroll(0);
+    $.mobile.changePage.defaults.transition = 'slide';
+});
+</script>
+</html>
